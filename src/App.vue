@@ -1,12 +1,32 @@
 <template>
-    <a-layout>
-      <a-layout-header style="background-color: lightgray; text-align: center"><h1>Country Demo</h1></a-layout-header>
-      <a-layout-content>
-        <router-view></router-view>
-      </a-layout-content>
-      <a-layout-footer style="background-color: lightgray; text-align: center">©2021</a-layout-footer>
-    </a-layout>
+  <div id="app">
+    <div id="nav">
+      <router-link to="/">Home</router-link> |
+      <router-link to="/about">About</router-link>
+    </div>
+    <router-view/>
+  </div>
 </template>
 
-<style></style>
+<style lang="scss">
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
 
+#nav {
+  padding: 30px;
+
+  a {
+    font-weight: bold;
+    color: #2c3e50;
+
+    &.router-link-exact-active {
+      color: #42b983;
+    }
+  }
+}
+</style>
